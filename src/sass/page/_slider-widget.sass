@@ -1,0 +1,56 @@
+.slider-widget
+  width: 98% !important
+  margin: 1%
+  .item
+    position: relative
+    &:before
+      position: absolute
+      content: ''
+      width: 100%
+      height: 100%
+      bottom: 0
+      top: 0
+      +bg(sl_bg)
+      opacity: .5
+    img
+      margin: 0
+      height: 97vh
+      object-fit: cover
+    div
+      position: absolute
+      top: 30%
+      left: 5%
+      height: 20rem
+      width: 100%
+      p
+        position: absolute
+        bottom: 0
+        width: 70%
+        left: 0
+        color: $white
+    h2
+      position: absolute
+      top: 0
+      width: auto
+      display: inline
+      background: $black
+      padding: .3rem
+      text-transform: uppercase
+      opacity: 0
+      font:
+        weight: 500
+        size: 3rem
+      color: $white
+      @media(max-width: 960px)
+        width: 100%
+        font:
+          size: 2rem
+
+  .owl-item.active
+    p
+      @extend .animImg
+      @extend %flipInX
+    h2
+      opacity: 1
+      @extend .animated
+      @extend %zoomInLeft

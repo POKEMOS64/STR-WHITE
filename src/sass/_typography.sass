@@ -1,0 +1,175 @@
+html
+	font-size: 20px
+	@media(max-width:1600px)
+		//font-size: 16px
+	@media(max-width:1440px)
+		font-size: 15px
+	@media(max-width:1200px)
+		font-size: 15px
+	@media(max-width:480px)
+		font-size: 13px
+$gold: #ce9f51
+$grey: #999
+$black: #1c1d22
+$base: #141518
+$white: #666
+body
+	background: #fff
+	@media(min-width:960px)
+		padding-left: 280px
+	font:
+		family: $MON
+		weight: 400
+main
+	position: relative
+	width: 100%
+.text
+	position: relative
+	padding-left: 30px !important
+	box-sizing: border-box
+	img
+		opacity: 0
+	&::after
+		content: ''
+		width: 100px
+		height: 3px
+		position: absolute
+		background: $gold
+		bottom: 10px
+		left: 10px
+	&::before
+		content: ''
+		width: 3px
+		height: 100px
+		position: absolute
+		background: $gold
+		bottom: 0
+		left: 20px
+
+.container
+	overflow: hidden
+	width: 100% !important
+	max-width: 1200px
+	//max-width: 1170px
+	margin: 0 auto
+
+	&.plus
+		max-width: 98%
+	@media(max-width:960px)
+		width: 98%
+		padding: 0 2%
+		box-sizing: border-box
+
+
+img,
+iframe
+	width: 100%
+	margin: auto
+	display: block
+	margin-top: 1rem
+	margin-bottom: 1rem
+	&.classic
+		width: auto
+/*Обязательный параметр!!!!!!!!*/
+
+a
+	color: #000000
+
+h1
+	font-size: 2.369em
+	color: $gold
+h2
+	font-size: 1.777em
+	color: #fff
+h3
+	font-size: 1.33em
+p
+	font-size: 1em
+.h1
+	font-size: 1.3em
+	&.bold
+		font:
+			weight: 900
+
+.h2
+	font-size: 1.1em
+	font-weight: 300
+	&.bold
+		font:
+			weight: 600
+.h3
+	position: relative
+	font-size: 1.333rem
+	font-family:
+	font-weight: 400
+	border-bottom: 1px solid #e0e0e0
+
+.event__text
+	ul
+		li
+			margin-left: 15px
+			i
+				position: relative
+				top: 5px
+				margin-right: 5px
+.img-page
+	position: relative
+	h1
+		position: absolute
+		top: 20%
+		left: 5%
+		color: rgba(206, 159, 81, 0.8)
+		font:
+			weight: 900
+			size: 4rem
+		@media(max-width: 960px)
+			font:
+				size: 2rem
+			color: rgba(206, 159, 81, 1)
+.bread
+	padding-left: 30px
+.sidenav-trigger
+	position: fixed
+	z-index: 99
+	background: #ffeb3b
+	padding: 1rem 3.3rem
+	top: 0
+	display: none
+.sidenav
+	li
+		&:first-child
+			background: #1c1d22
+			+bg(bg_mobi)
+			background-size: cover
+			background-position: right 0
+			padding: 2rem 0
+			a
+				color: #fff
+				&.linki
+					margin: 0
+				&.logo-brand
+					color: #fff
+					font:
+						size: 1.33rem
+						weight: 900
+		&.sidenav-close
+			width: 100%
+			display: -webkit-flex
+			display: -ms-flex
+			display: flex
+			align-items: center
+			i
+				float: right
+
+
+.deploy
+	.btn
+		margin: 1rem auto
+		display: -webkit-flex
+		display: -ms-flex
+		display: flex
+		align-items: center
+		justify-content: center
+
+//#b0bec5 blue-grey lighten-3
+//#b71c1c red darken-4

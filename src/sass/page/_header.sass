@@ -1,0 +1,38 @@
+header
+  color: $grey
+  position: fixed
+  top: 0
+  bottom: 0
+  left: 0
+  width: 280px
+  height: 100%
+  .logo-brand
+    height: 100px
+    @extend %f-row
+    align-items: center
+    color: $grey
+    font:
+      weight: 600
+      size: 1.1rem
+  nav
+    height: auto
+    min-height: auto
+    border-top: 1px solid $gold
+
+  .navi
+    @extend %f-row
+    @extend %f-col
+    a
+      color: $base
+      font:
+        size: .75rem
+  .info-footer
+    position: absolute
+    bottom: 0
+    padding: 0 1rem
+    font:
+      size: .75rem
+    a
+      font:
+        size: .75rem
+      color: $gold

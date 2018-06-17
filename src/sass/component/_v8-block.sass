@@ -1,0 +1,92 @@
+.v8_block
+  .ele
+    padding-left: 50px
+    position: relative
+    @extend %bounceInUp
+    .h1
+      line-height: .9
+    &::before
+      content: ''
+      width: 25px
+      height: 25px
+      border: 3px solid $gold
+      background: $gold
+      display: block
+      position: absolute
+      left: 10px
+      top: 0px
+      border-radius: 50px
+      -webkit-animation-duration: 3s
+      animation-duration: 3s
+      -webkit-animation-fill-mode: both
+      animation-fill-mode: both
+    &::after
+      content: ''
+      width: 3px
+      height: 0px
+      max-height: 100%
+      position: absolute
+      bottom: 0
+      top: 22px
+      background: $gold
+      left: 21px
+      -webkit-animation-duration: 4s
+      animation-duration: 4s
+      -webkit-animation-fill-mode: both
+      animation-fill-mode: both
+      @include anim_height_fix
+    &.anim
+      &::after
+        height: 300px
+        @include anim_height
+    &:hover
+      &::after
+        height: 3px
+        width: 200px
+        @include anim_height_fix
+        //@extend %fadeOutUp
+        @include anim_width
+      &::before
+        background: $black
+  &.anim
+    .row
+      position: relative
+      &::before
+        content: ''
+        width: 3px
+        height: 50px
+        position: absolute
+        bottom: -23px
+        z-index: 99
+        background: $gold
+        left: 21px
+        -webkit-animation-duration: 4s
+        animation-duration: 4s
+        -webkit-animation-fill-mode: both
+        animation-fill-mode: both
+        @include anim_height_fix
+      &::after
+        content: ''
+        width: 300px
+        height: 3px
+        position: absolute
+        bottom: -23px
+        z-index: 99
+        background: $gold
+        left: 21px
+        -webkit-animation-duration: 4s
+        animation-duration: 4s
+        -webkit-animation-fill-mode: both
+        animation-fill-mode: both
+        @include anim_height_fix
+
+
+%ele
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+@for $i from 0 through 10
+  .ele:nth-child(#{$i})
+    @extend %ele
+    $length: 1s*$i
+    -webkit-animation-duration: $length
+    animation-duration: $length

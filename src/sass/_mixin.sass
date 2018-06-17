@@ -1,0 +1,337 @@
+=bg($img, $for: png)
+	background-image: url('../img/#{$img}.#{$for}')
+//transition: {$obb} 1s, -webkit-transform 1s
+
+@import "component/anim"
+
+//*****Примеси Анимации***//
+
+%fadeInUp
+	@extend .fadeInUp
+%fadeInDown
+	@extend .fadeInDown
+%fadeOutUp
+	@extend .fadeOutUp
+
+%slideInDown
+	@extend .slideInDown
+%slideInLeft
+	@extend .slideInLeft
+%slideOutLeft
+	@extend .slideOutLeft
+%slideInUp
+	@extend .slideInUp
+
+%bounceInLeft
+	@extend .bounceInLeft
+%bounceInUp
+	@extend .bounceInUp
+%bounceOutDown
+	@extend .bounceOutDown
+%bounceInLeft
+	@extend .bounceInLeft
+%bounceInRight
+	@extend .bounceInRight
+%bounceOutLeft
+	@extend .bounceOutLeft
+%bounceOutRight
+	@extend .bounceOutRight
+
+%flipInX
+	@extend .flipInX
+
+%pulse
+	@extend .pulse
+
+%swing
+	@extend .swing
+
+%zoomIn
+	@extend .zoomIn
+%zoomInLeft
+	@extend .zoomInLeft
+//***********End*********//
+
+/*Разметка для колонок*/
+.color_bag
+	position: fixed
+	z-index: 98
+	width: 100%
+	.container
+		width: 100% !important
+		max-width: 1200px
+		.row
+			padding: 0
+			margin: 0
+	.col.s1
+		height: 10px
+/*Разметка для колонок*/
+//Примеси
+
+%rel
+	position: relative
+%margin-min
+	margin: 1.8rem auto .5rem
+%marg-btn
+	margin-bottom: 0
+%padding-min
+	padding: 1.3rem .5rem
+
+.marg-btn
+	@extend %marg-btn
+.margin-min
+	@extend %margin-min
+.padding-min
+	@extend %padding-min
+//Примеси
+.line-in
+	a
+		border-bottom: 1px solid #666
+
+%f-row
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: row
+	justify-content: center
+	flex-wrap: wrap
+%f-col
+	flex-direction: column
+
+$width: 1200px
+$column: $width/12
+
+//.container
+	width: 8*$column
+
+input
+	&::-webkit-input-placeholder
+	&::-moz-placeholder
+	&:-ms-input-placeholder
+
+@mixin anim_top
+	-webkit-transition: top .5s ease-in
+  -moz-transition: top .5s ease-in
+  transition: top .5s ease-in
+@mixin anim_width
+	-webkit-transition: width 1s ease-in
+  -moz-transition: width 1s ease-in
+  transition: width 1s ease-in
+@mixin anim_height
+	-webkit-transition: height 2s ease-in
+  -moz-transition: height 2s ease-in
+  transition: height 2s ease-in
+@mixin anim_height_fix
+	-webkit-transition: height 2s cubic-bezier(0.87, 0.57, 0.68, 0.25)
+  -moz-transition: height 2s cubic-bezier(0.87, 0.57, 0.68, 0.25)
+  transition: height 2s cubic-bezier(0.87, 0.57, 0.68, 0.25)
+@mixin anim_opacity
+	-webkit-transition: opacity 1s ease-in
+  -moz-transition: opacity 1s ease-in
+  transition: opacity 1s ease-in
+@mixin anim_border
+	-webkit-transition: border 1s ease-in
+  -moz-transition: border 1s ease-in
+  transition: border 1s ease-in
+@mixin anim_color
+	-webkit-transition: color .5s ease-in
+  -moz-transition: color .5s ease-in
+  transition: color .5s ease-in
+
+@mixin anim_font
+	-webkit-transition: font-size .5s ease-in
+  -moz-transition: font-size .5s ease-in
+  transition: font-size .5s ease-in
+@mixin anim_bg
+	-webkit-transition: background .5s ease-in
+  -moz-transition: background .5s ease-in
+  transition: background .5s ease-in
+//Анимация Elementa
+.anim_opacity
+	opacity: 1 !important
+	@include anim_opacity
+.opacity
+	opacity: 0
+.ele:hover
+	cursor: default
+	opacity: .8
+	@include anim_opacity
+.top_up
+	top: 0 !important
+	@include anim_top
+.top_stop
+	top: inherit
+	@include anim_top
+//Стандартная кнопка
+
+.btn
+	background: #ce9f51
+	//@extend .red
+	@extend .waves-effect
+	&:hover
+		opacity: .8
+		@include anim_opacity
+	&.max
+		height: 50px
+
+.center_text
+	text-align: center
+
+.hidden-mobi
+	@media(max-width: 960px)
+		display: none
+///Выпадающее меню на мобилке//
+.end
+	@extend %bounceOutRight
+.start
+	@extend %bounceInRight
+.right_anim_panel
+	@extend .animated
+	position: fixed
+	@extend .white
+	width: 280px
+	bottom: 0
+	top: 0
+	height: 100%
+	right: 0
+	z-index: 99
+	a
+		font:
+			size: .8rem
+
+.hidden-mobi
+	@media(max-width: 960px)
+		display: none
+.hidden-desc
+	@media(min-width: 961px)
+		display: none
+.start_menu
+	@extend .animated
+	z-index: 1000
+	position: fixed
+	right: 0
+	top: 5%
+	.btn
+		@extend .animated
+		display: none
+		&.active
+			display: block
+///Выпадающее меню на мобилке//
+.acolor
+	&:hover
+		@include anim_color
+		@extend .teal-text.text-lighten-3
+
+.modal_click
+	position: absolute
+	bottom: 0
+	right: 0
+	button
+		position:  relative
+		overflow: visible
+		//padding-right: 2rem
+		margin-right: 2rem
+		@extend .animated
+		i
+			position: absolute
+			right: -2rem
+			padding: .3rem
+			background: #455a64
+			line-height: 1
+			width: 2rem
+			height: 2rem
+		&:hover
+			i
+				width: 100% + 25
+				@include anim_width
+
+
+
+
+.link_buton-anima
+	position: absolute
+	width: 100%
+	z-index: 99
+	background: #000
+	.fix-lable
+		width: 10rem
+		position: absolute
+		top: -1rem
+		min-height: 2rem
+		@extend .f-str
+		&.right
+			font:
+				size: 1.3rem
+			top: -5rem
+			height: 3.8rem
+
+.path
+	@include triangle("left", 30rem, 25rem, #e0e0e0)
+	position: absolute !important
+	width: 50%
+	bottom: 0
+	max-height: 100%
+	z-index: 8 !important
+	right: 0
+	top: 0
+.path_down
+	@include triangle("up", 30rem, 15rem, #e0e0e0)
+	position: absolute !important
+	width: 50%
+	bottom: 0
+	max-height: 100%
+	z-index: 8 !important
+	left: 0
+
+.f-str
+	display: -webkit-flex
+	display: -ms-flex
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+
+.clear
+	height: 2rem
+
+.data-text
+	span
+		font:
+			size: .8rem !important
+
+.fix-anima
+	position: relative
+	&::after
+		+bg(bg_sub)
+		background-size: cover
+		border-radius: 14px
+		opacity: 0
+		content: ''
+		display: block
+		position: absolute
+		width: 0%
+		max-width: 102%
+		height: 0%
+		max-height: 106%
+		border: 6px solid #ce9f51
+		//background: #fff
+		bottom: -3%
+		left: -1%
+		right: 0
+		margin: 0 auto
+	&:hover
+		&::after
+			width: 102%
+			height: 106%
+			left: -1%
+			opacity: 1
+			-webkit-animation-duration: .5s
+		  animation-duration: .5s
+		  -webkit-animation-fill-mode: both
+		  animation-fill-mode: both
+			@extend .polo
+//
+.fix
+	&::before
+		@include triangle("up", 2rem, 1rem, #b25c9c)
+		content: ""

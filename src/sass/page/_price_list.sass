@@ -1,0 +1,79 @@
+.price_list
+  overflow: hidden
+  .nvi
+    position: relative
+    &.no-ww
+      @extend .animated
+      @extend %bounceInLeft
+    &.ww
+      @extend .animated
+      @extend %bounceInLeft
+    @media(max-width: 960px)
+      //width: 0 !important
+      background: #1c1d22
+      position: fixed
+      border-radius: 0 0 14px 0
+      top: 20%
+      ul
+      &.no-ww
+        width: 0%
+      &.ww
+        width: 91.66667%
+        z-index: 9
+    li
+      width: 100%
+      //height: 3rem
+      margin: .1rem 0
+    &__name
+      display: -webkit-flex
+      display: -ms-flex
+      display: flex
+      flex-direction: row
+      justify-content: space-between
+      @extend .animated
+      i
+        display: none
+        @extend .animated
+        @extend %flipInX
+      @media(max-width: 960px)
+        background: #1c1d22
+        padding: .5rem
+        position: absolute
+        transform: rotate(90deg)
+        right: -5.8rem
+        top: 3.8rem
+        border-radius: 14px 14px 0 0
+        i
+          &.exit_click
+          //  display: block
+          &.nvi_i
+          &.no-active
+            display: none !important
+          &.active
+            display: block
+      h3
+        margin: 0
+    &_list
+      @media(max-width: 960px)
+        display: none
+      &.active
+        @extend .animated
+        @extend %flipInX
+        display: block
+      li
+        &.active
+          background: $grey
+  .price_box
+    display: none
+    &.active
+      @extend .animated
+      @extend %bounceInLeft
+      display: block
+  .other_remont_price_viewer
+    td
+      &:hover
+        background: $grey
+        color: $white
+        @include anim_color
+    font:
+      size: .8rem
